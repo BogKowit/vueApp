@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full text-sm">
+  <header :class="['w-full', 'text-sm', headerHeightClass]">
     <div class="fixed left-0 top-0 w-full bg-white">
       <div class="mx-auto flex h-16 flex-nowrap border-b-2 border-white border-b-brand-gray-1 px-8">
         <a :href="url" class="flex h-full items-center text-xl">{{ companyName }}</a>
@@ -13,9 +13,11 @@
         </nav>
         <div class="ml-auto flex h-full items-center">
           <ProfileImage v-if="isLoggedIn" />
-          <ActionButton text="Sing Up" v-else="isLoggedIn" :isPrimary="true" @click="loginUser" />
+          <ActionButton v-else text="Sing Up" @click="loginUser" />
         </div>
       </div>
+
+      <TheSubnav v-if="isLoggedIn" />
     </div>
   </header>
 </template>
@@ -23,12 +25,13 @@
 <script>
 import ActionButton from './ActionButton.vue'
 import ProfileImage from './ProfileImage.vue'
-
+import TheSubnav from './TheSubnav.vue'
 export default {
   name: 'MainNav',
   components: {
     ActionButton,
-    ProfileImage
+    ProfileImage,
+    TheSubnav
   },
   data() {
     return {
@@ -41,6 +44,14 @@ export default {
   methods: {
     loginUser() {
       this.isLoggedIn = true
+    }
+  },
+  computed: {
+    headerHeightClass() {
+      return {
+        'h-16': !this.isLoggedIn,
+        'h-32': this.isLoggedIn
+      }
     }
   }
 }

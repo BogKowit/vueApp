@@ -7,11 +7,23 @@
 <script>
 export default {
   name: 'ActionButton',
-  props: ['text', 'isPrimary'],
-
+  props: {
+    text: {
+      type: String,
+      required: true
+    },
+    type: {
+      type: String,
+      required: false,
+      default: 'primary',
+      validator(value) {
+        return ['primary', 'secndary'].includes(value)
+      }
+    }
+  },
   computed: {
     buttonClass() {
-      return { primary: this.isPrimary, secondary: !this.isPrimary }
+      return { [this.type]: true }
     }
   }
 }
