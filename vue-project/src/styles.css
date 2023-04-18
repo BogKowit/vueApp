@@ -2,7 +2,3 @@
 @tailwind components;
 @tailwind utilities;
 
-header {
-  @apply m-2 bg-red-700 p-2 text-blue-200;
-  font-size: 20px;
-}

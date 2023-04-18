@@ -1,16 +1,10 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-import './styles.css'
-</script>
-
 <template>
-  <header class="header bg-red-500">
-    <div class="bg-red-200">test 1</div>
-    <HelloWorld />
-  </header>
-
-  <RouterView />
+  <MainNav />
 </template>
 
 <style scoped></style>
+
+<script setup lang="ts">
+import './styles.css'
+import MainNav from '@/components/MainNav.vue'
+</script>
