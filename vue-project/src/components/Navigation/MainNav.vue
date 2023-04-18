@@ -23,7 +23,7 @@
 </template>
 
 <script>
-import ActionButton from './ActionButton.vue'
+import ActionButton from '@/components/shared/ActionButton.vue'
 import ProfileImage from './ProfileImage.vue'
 import TheSubnav from './TheSubnav.vue'
 export default {

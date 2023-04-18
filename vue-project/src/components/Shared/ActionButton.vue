@@ -17,7 +17,7 @@ export default {
       required: false,
       default: 'primary',
       validator(value) {
-        return ['primary', 'secndary'].includes(value)
+        return ['primary', 'secondary'].includes(value)
       }
     }
   },
@@ -30,11 +30,11 @@ export default {
 </script>
 <style scoped>
 button {
-  @apply rounded px-5 py-3 font-medium;
+  @apply px-5 py-3 font-medium;
 }
 
 .primary {
-  @apply border-0 bg-brand-blue-1   text-white duration-150 hover:shadow-blue;
+  @apply rounded  border-0 bg-brand-blue-1   text-white duration-150 hover:shadow-blue;
 }
 
 .secondary {
