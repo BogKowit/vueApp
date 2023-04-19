@@ -1,7 +1,14 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <main>
-  </main>
+  <TheHero />
 </template>
+
+<script>
+import TheHero from '@/components/JobSearch/TheHero.vue'
+
+export default {
+  name: 'HomeView',
+  components: {
+    TheHero
+  }
+}
+</script>

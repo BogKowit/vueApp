@@ -1,12 +1,12 @@
 <template>
-  <MainNav />
-  <TheHero />
+  <MainNav/>
+  <RouterView />
 </template>
 
-<style scoped></style>
 
-<script setup lang="ts">
+<script setup >
+import MainNav from "@/components/Navigation/MainNav.vue"
+
 import './styles.css'
-import MainNav from '@/components/Navigation/MainNav.vue'
-import TheHero from '@/components/JobSearch/TheHero.vue'
+import { RouterView } from 'vue-router'
 </script>
