@@ -8,9 +8,11 @@ import LifeViewVue from '@/views/LifeView.vue'
 import HireViewVue from '@/views/HireView.vue'
 import JobViewVue from '@/views/JobViewVue.vue'
 
-
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
+  scrollBehavior() {
+    return { top: 0, left: 0, behavior: 'smooth' }
+  },
   routes: [
     {
       path: '/',
